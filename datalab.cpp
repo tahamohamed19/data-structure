@@ -171,4 +171,104 @@ int main(){
 
     cout << "The concatenated string is: " << sum << endl;
     cout << "The count of numbers divisible by 3 is: " << count << endl;
+
+
+
+
+
+
+    
+}
+
+
+
+
+
+// Q6
+// You are given a sequence of N integers. Find the number of pairs (i, j)
+// such that i < j and A[i] + A[j] is even.
+// Input    
+// The first line contains an integer N (1 ≤ N ≤ 1000).
+// The second line contains N integers A[i] (1 ≤ A[i] ≤ 1000).
+// Output
+// Output the number of pairs (i, j) such that i < j and A[i] + A[j] is even.
+// Sample Input
+// 5
+// 1 2 3 4 5
+// Sample Output
+
+// 6
+#include <vector>
+#include <algorithm>    
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cout << "Enter the number of elements in the sequence: ";
+    cin >> n;
+    
+    vector<int> A(n);
+    cout << "Enter the elements of the sequence: ";
+    for (int i = 0; i < n; i++) {
+        cin >> A[i];
+    }
+
+    int count = 0;
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if ((A[i] + A[j]) % 2 == 0) {
+                count++;
+            }
+        }
+    }
+
+    cout << "The number of pairs (i, j) such that A[i] + A[j] is even: " << count << endl;
+
+    return 0;
+}
+
+
+
+
+// Q7
+// You are given a sequence of N integers. Find the number of pairs (i, j)
+// such that i < j and A[i] + A[j] is odd.
+// Input
+// The first line contains an integer N (1 ≤ N ≤ 1000).
+// The second line contains N integers A[i] (1 ≤ A[i] ≤ 1000).
+// Output
+// Output the number of pairs (i, j) such that i < j and A[i] + A[j] is odd.
+// Sample Input
+// 5
+// 1 2 3 4 5
+// Sample Output
+// 6
+#include <vector>
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cout << "Enter the number of elements in the sequence: ";
+    cin >> n;
+    
+    vector<int> A(n);
+    cout << "Enter the elements of the sequence: ";
+    for (int i = 0; i < n; i++) {
+        cin >> A[i];
+    }
+
+    int count = 0;
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if ((A[i] + A[j]) % 2 != 0) {
+                count++;
+            }
+        }
+    }
+
+    cout << "The number of pairs (i, j) such that A[i] + A[j] is odd: " << count << endl;
+
+    return 0;
 }
